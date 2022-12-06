@@ -11,6 +11,11 @@ class PostsController < ApplicationController
     render json: post
   end
 
+  def create
+    post = Post.create(post_params)
+    render json: post, status: :created
+  end
+
   private
 
   def render_not_found_response
